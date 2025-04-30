@@ -1,7 +1,19 @@
 .container-auth {
-    display         : flex;
-    justify-content : center;
-    align-items     : center;
-    height          : 100vh;
-    background-color: #f5f5f5;
+    position             : absolute;
+    width                : 100%;
+    height               : 100%;
+    z-index              : -1;
+    background-color     : rgb(250, 251, 252);
+    background-image     : url(https://id-frontend.prod-east.frontend.public.atl-paas.net/assets/trello-left.4f52d13c.svg), url(https://id-frontend.prod-east.frontend.public.atl-paas.net/assets/trello-right.e6e102c7.svg);
+    background-repeat    : no-repeat, no-repeat;
+    background-attachment: fixed, fixed;
+    background-size      : 368px, 368px;
+    background-position  : left bottom, right bottom;
+}
+
+@media (max-width: 800px) {
+    .container-auth {
+        background: rgb(255, 255, 255);
+        color     : rgb(23, 43, 77);
+    }
 }
