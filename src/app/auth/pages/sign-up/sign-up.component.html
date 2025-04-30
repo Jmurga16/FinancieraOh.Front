@@ -1,1 +1,107 @@
-<p>sign-up works!</p>
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4 shadow" style="width: 400px;">
+        <div class="text-center mb-3">
+            <img src="assets/images/login-logo-trello.svg" alt="Logo"
+                height="36" />
+        </div>
+        <h6 class="h6 text-center mb-2">Ingresa tus datos</h6>
+        <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+                <label for="firstName" class="form-label">Nombre</label>
+                <input
+                    type="text"
+                    id="firstName"
+                    class="form-control"
+                    formControlName="firstName"
+                    placeholder="Ingresa tu nombre" />
+                <div
+                    *ngIf="signUpForm.get('firstName')?.invalid && signUpForm.get('firstName')?.touched"
+                    class="text-danger">
+                    El nombre es requerido.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="lastName" class="form-label">Apellido</label>
+                <input
+                    type="text"
+                    id="lastName"
+                    class="form-control"
+                    formControlName="lastName"
+                    placeholder="Ingresa tu apellido" />
+                <div
+                    *ngIf="signUpForm.get('lastName')?.invalid && signUpForm.get('lastName')?.touched"
+                    class="text-danger">
+                    El apellido es requerido.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    class="form-control"
+                    formControlName="email"
+                    placeholder="Ingresa tu correo electrónico" />
+                <div
+                    *ngIf="signUpForm.get('email')?.invalid && signUpForm.get('email')?.touched"
+                    class="text-danger">
+                    Por favor, ingresa un email válido.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Contraseña</label>
+                <input
+                    type="password"
+                    id="password"
+                    class="form-control"
+                    formControlName="password"
+                    placeholder="Ingresa tu contraseña" />
+                <div
+                    *ngIf="signUpForm.get('password')?.invalid && signUpForm.get('password')?.touched"
+                    class="text-danger">
+                    La contraseña es requerida.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="confirmPassword" class="form-label">
+                    Confirmar Contraseña
+                </label>
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    class="form-control"
+                    formControlName="confirmPassword"
+                    placeholder="Confirma tu contraseña" />
+                <div
+                    *ngIf="signUpForm.get('confirmPassword')?.invalid && signUpForm.get('confirmPassword')?.touched"
+                    class="text-danger">
+                    Debes confirmar tu contraseña.
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary w-100"
+                [disabled]="signUpForm.invalid">Registrarse</button>
+        </form>
+        <div class="text-center mt-3">
+            <a routerLink="/auth/login" class="text-decoration-none">
+                ¿Ya tienes una cuenta? Inicia sesión</a>
+        </div>
+        <div class="text-center mt-3">
+            <hr>
+        </div>
+        <footer class="text-center mt-3">
+            <div class="text-center">
+                <img src="assets/images/atlassian-logo.svg" alt="Logo"
+                    height="28" />
+            </div>
+            <div class="text-center mt-2" style="font-size: 0.85rem;">
+                Una cuenta para Trello, Jira, Confluence y <a>más</a>.
+                <div>Política de privacidad •
+                    <ul
+                        style="display: inline; list-style-type: disc; padding-left: 1rem; margin: 0;">
+                        <li style="display: inline;">Aviso de usuario</li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>

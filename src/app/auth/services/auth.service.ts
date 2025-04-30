@@ -25,10 +25,6 @@ export class AuthService {
         this.userService.initializeUsers();
     }
 
-    private getApiUrl(): string {
-        return `${this.baseUrl}`;
-    }
-
     private getUsers(): { email: string; password: string }[] {
         const users = localStorage.getItem(this.localStorageKey);
         return users ? JSON.parse(users) : [];
@@ -50,16 +46,10 @@ export class AuthService {
         }
     }
 
-    /* login(request: LoginUserDto): Observable<AuthResponse> {
-        return this.http.post<AuthResponse>(`${this.getApiUrl()}/${this.endpointAuth}`, request).pipe(
-            tap(result => {
-                if (result.token) {
-                    this.cookieService.saveToken(result.token);
-                }
-            })
-        );
-    } */
-
+    isEmailRegistered(email: string): boolean {
+        const users = this.getUsers();
+        return users.some(user => user.email === email);
+    }
 
     logout(): void {
         this.cookieService.deleteToken();
