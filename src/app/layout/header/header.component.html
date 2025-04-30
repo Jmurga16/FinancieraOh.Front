@@ -1,12 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
-        <!-- Botón de menú lateral -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Logo -->
         <a class="navbar-brand d-flex align-items-center" href="#">
             <img src="assets/images/login-logo-trello.svg" alt="Trello Logo"
                 height="30" class="me-2"
@@ -29,12 +27,84 @@
                     </a>
                     <ul class="dropdown-menu"
                         aria-labelledby="workspacesDropdown">
-                        <li><a class="dropdown-item" href="#">Workspace
-                                1</a></li>
-                        <li><a class="dropdown-item" href="#">Workspace
-                                2</a></li>
-                        <li><a class="dropdown-item" href="#">Workspace
-                                3</a></li>
+                   
+
+
+               
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-columns"></i> boards</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-th-large"></i> templates</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-home"></i> home</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <div class="accordion" id="accordionWorkspaces"
+                                onclick="event.stopPropagation();">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header"
+                                        id="headingOne">
+                                        <button class="accordion-button"
+                                            type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne"
+                                            aria-expanded="true"
+                                            aria-controls="collapseOne">
+                                            Gabriel's Workspace
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne"
+                                        class="accordion-collapse collapse show"
+                                        aria-labelledby="headingOne"
+                                        data-bs-parent="#accordionWorkspaces">
+                                        <div class="accordion-body">
+                                            <ul style="padding-left:0">
+                                                <li><a class="dropdown-item" style="list-style-type: none;"
+                                                        href="#"><i class="fas fa-columns"></i> Boards</a></li>
+                                                <li><a class="dropdown-item"
+                                                        href="#"><i class="fas fa-star"></i> Highlights</a></li>
+                                                <li><a class="dropdown-item"
+                                                        href="#"><i class="fas fa-eye"></i> Views</a></li>
+                                                <li><a class="dropdown-item"
+                                                        href="#"><i class="fas fa-users"></i> Users</a></li>
+                                                <li><a class="dropdown-item"
+                                                        href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header"
+                                        id="headingTwo">
+                                        <button
+                                            class="accordion-button collapsed"
+                                            type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#collapseTwo"
+                                            aria-expanded="false"
+                                            aria-controls="collapseTwo">
+                                            Renato's Workspace
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo"
+                                        class="accordion-collapse collapse"
+                                        aria-labelledby="headingTwo"
+                                        data-bs-parent="#accordionWorkspaces">
+                                        <div class="accordion-body">
+                                            <ul style="padding-left:0">
+                                                <li style="list-style-type: none;"><a class="dropdown-item"
+                                                        href="#"><i class="fas fa-columns"></i> Boards</a></li>
+                                                <li style="list-style-type: none;"><a class="dropdown-item"
+                                                        href="#"><i class="fas fa-star"></i> Highlights</a></li>
+                                                <li style="list-style-type: none;"><a class="dropdown-item"
+                                                        href="#"><i class="fas fa-eye"></i> Views</a></li>
+                                                <li style="list-style-type: none;"><a class="dropdown-item"
+                                                        href="#"><i class="fas fa-users"></i> Users</a></li>
+                                                <li style="list-style-type: none;"><a class="dropdown-item"
+                                                        href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
                 </li>
 
@@ -50,8 +120,21 @@
                         Recent
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="recentDropdown">
-                        <li><a class="dropdown-item" href="#">Recent 1</a></li>
-                        <li><a class="dropdown-item" href="#">Recent 2</a></li>
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center"
+                                href="#">
+                                <div
+                                    class="rounded-circle me-2"
+                                    style="width: 20px; height: 20px; background-color: orange;"></div>
+                                <div>
+                                    <strong>Prueba</strong>
+                                    <div class="text-muted"
+                                        style="font-size: 12px;">
+                                        gabrielmontoyahuamani26's workspace
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
                     </ul>
                 </li>
 
@@ -91,7 +174,7 @@
                     aria-expanded="false">
                     <img src="assets/images/user-icon.png" alt="User Icon"
                         height="30" style="filter: brightness(0) invert(1);"
-                        class="rounded-circle"  />
+                        class="rounded-circle" />
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end text-small"
                     aria-labelledby="userDropdown">
