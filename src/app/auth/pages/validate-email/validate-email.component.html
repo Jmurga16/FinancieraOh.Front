@@ -1,1 +1,42 @@
-<p>validate-email works!</p>
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4 shadow" style="width: 400px;">
+        <div class="text-center mb-3">
+            <img src="assets/images/login-logo-trello.svg" alt="Logo"
+                height="36" />
+        </div>
+        <h6 class="h6 text-center mb-2">Ingresa tus datos</h6>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" class="form-control"
+                    formControlName="email"
+                    placeholder="Correo electrónico" />
+                <div
+                    *ngIf="form.get('email')?.invalid && form.get('email')?.touched"
+                    class="text-danger">
+                    Por favor, ingrese un Email válido.
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary w-100"
+                [disabled]="form.invalid">Continuar</button>
+        </form>
+        <div class="text-center mt-3">
+            <hr>
+        </div>
+        <footer class="text-center mt-3">
+            <div class="text-center">
+                <img src="assets/images/atlassian-logo.svg" alt="Logo"
+                    height="28" />
+            </div>
+            <div class="text-center mt-2" style="font-size: 0.85rem;">
+                Una cuenta para Trello, Jira, Confluence y <a>más</a>.
+                <div>Política de privacidad •
+                    <ul
+                        style="display: inline; list-style-type: disc; padding-left: 1rem; margin: 0;">
+                        <li style="display: inline;">Aviso de usuario</li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>

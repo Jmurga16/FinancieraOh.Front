@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { LoginUserDto } from '../../models/login-user-dto';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -37,6 +38,16 @@ export class LoginComponent {
         },
         error: (error) => {
           console.error('Autenticación fallida:', error);
+          Swal.fire({
+            title: 'Advertencia!',
+            text: 'Credenciales incorrectas.',
+            icon: 'warning',
+            confirmButtonText: 'Aceptar',
+            customClass: {
+              confirmButton: 'btn btn-primary'
+            },
+            buttonsStyling: false
+          })
         }
       });
     }
