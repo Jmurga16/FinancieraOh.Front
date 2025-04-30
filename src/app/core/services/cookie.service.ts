@@ -7,10 +7,10 @@ import { CookieService } from 'ngx-cookie-service';
 export class CustomCookieService {
     constructor(private cookieService: CookieService) { }
 
-    saveToken() {
+    saveToken(token: string) {
         const now = new Date();
         const expires = new Date(now.getTime() + 5 * 60000); // 5 minutes
-        this.cookieService.set('token', '123456', expires);
+        this.cookieService.set('token', token, expires);
     }
 
     readToken() {
