@@ -1,1 +1,108 @@
-<p>header works!</p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+        <!-- Botón de menú lateral -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="assets/images/login-logo-trello.svg" alt="Trello Logo"
+                height="30" class="me-2"
+                style="filter: brightness(0) invert(1);" />
+        </a>
+
+        <!-- Menú principal -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                <!-- Dropdown Workspaces -->
+                <li class="nav-item dropdown">
+                    <a
+                        class="nav-link dropdown-toggle"
+                        href="#"
+                        id="workspacesDropdown"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Workspaces
+                    </a>
+                    <ul class="dropdown-menu"
+                        aria-labelledby="workspacesDropdown">
+                        <li><a class="dropdown-item" href="#">Workspace
+                                1</a></li>
+                        <li><a class="dropdown-item" href="#">Workspace
+                                2</a></li>
+                        <li><a class="dropdown-item" href="#">Workspace
+                                3</a></li>
+                    </ul>
+                </li>
+
+                <!-- Dropdown Recent -->
+                <li class="nav-item dropdown">
+                    <a
+                        class="nav-link dropdown-toggle"
+                        href="#"
+                        id="recentDropdown"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Recent
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="recentDropdown">
+                        <li><a class="dropdown-item" href="#">Recent 1</a></li>
+                        <li><a class="dropdown-item" href="#">Recent 2</a></li>
+                    </ul>
+                </li>
+
+                <!-- Dropdown Crear -->
+                <li class="nav-item dropdown">
+                    <a
+                        class="nav-link dropdown-toggle"
+                        href="#"
+                        id="createDropdown"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Crear
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="createDropdown">
+                        <li><a class="dropdown-item" href="#">Crear
+                                Tablero</a></li>
+                        <li><a class="dropdown-item" href="#">Crear
+                                Proyecto</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <button class="btn btn-light text-primary me-3">
+                        Prueba
+                    </button>
+                </li>
+
+            </ul>
+
+            <!-- Icono de usuario -->
+            <div class="dropdown">
+                <a
+                    href="#"
+                    class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                    id="userDropdown"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <img src="assets/images/user-icon.png" alt="User Icon"
+                        height="30" style="filter: brightness(0) invert(1);"
+                        class="rounded-circle"  />
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end text-small"
+                    aria-labelledby="userDropdown">
+                    <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li><a class="dropdown-item" href="#">Earnings</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#"
+                            (click)="signOut()">Sign out</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
